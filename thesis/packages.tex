@@ -1,0 +1,106 @@
+\usepackage[a-3u]{pdfx}
+% for pdf/a compliance, see https://tex.stackexchange.com/a/474336/59716
+\pdfvariable omitcidset=1
+
+% Fixes for float package to be used with komascript
+\usepackage{scrhack}
+
+% fonts
+\usepackage{fontspec}
+\usepackage{lmodern}
+% workadound for broken microtype in TL2018
+\usepackage{luatexbase}
+\usepackage{microtype}
+\usepackage{fontawesome5}
+% language
+\usepackage[main=english, ngerman]{babel}
+\usepackage[autostyle]{csquotes}
+
+
+% math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xfrac}
+\usepackage{lscape}
+\usepackage{slashed}
+
+
+\usepackage[
+  mathrm=sym,        % use math font for mathrm, not text font
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+  warnings-off={
+    mathtools-colon,
+    mathtools-overbracket,
+  },
+]{unicode-math}
+
+\usepackage[
+  locale=US,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+  binary-units,
+]{siunitx}
+\sisetup{math-micro=\text{µ},text-micro=µ}
+\DeclareSIUnit\electronvolt{e\kern-.15em V}
+
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{eqparbox}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[super]{nth}
+
+\usepackage{float}
+\usepackage[
+  section, % floats stay in section
+  below, % allow in next section if on same page
+  above, % allow in last section if on same page
+]{placeins}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[
+  giveninits=true, % abbreviate all first names for consistency
+  urldate=iso,
+  seconds=true,    % needed for urldate=ISO, silences warning
+  sorting=none,
+  citestyle=numeric-comp,
+]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{bib/ATLAS.bib}
+\addbibresource{bib/ATLAS-useful.bib}
+\addbibresource{bib/CMS.bib}
+\addbibresource{bib/ConfNotes.bib}
+\addbibresource{bib/PubNotes.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{edge from parent}=[black!30!green,thick,draw]
+\tikzstyle{model} = [rectangle, minimum width=1.0cm, minimum height=0.6cm, text centered, draw=white, fill=black!30!green, text=white]
+\tikzstyle{inputs} = [rectangle, minimum width=1cm, minimum height=0.75cm,text centered, draw=black, fill=white]
+\tikzstyle{arrg} = [->, very thick, color=black!30!green, text=black!30!green]
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{tikz-3dplot}
+
+\usepackage{todonotes}
+\usepackage{listings}
+
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+
+\usepackage[xindy, toc]{glossaries}
+\setacronymstyle{long-short}
+\makeglossaries
+
+\usepackage[pass]{geometry}
